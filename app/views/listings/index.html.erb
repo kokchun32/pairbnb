@@ -1,0 +1,61 @@
+<h1>Welcome to Pairbnb</h1>
+
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Search
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+  <div>
+    Country
+    <%= f.select(
+      :sorted_by,
+      @filterrific.select_options[:with_country],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+
+<% end %>
+
+<h2>All listing of available premises</h2>
+
+<table>
+  <tr>
+    <th>Host Name</th>
+    <th>Type</th>
+    <th>Available Room</th>
+    <th>Availabe Bed</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>Address</th>
+    <th>Price</th>
+  </tr>
+
+  <% @listings.each do |list| %>
+  <tr>
+    <td><%= list.name %></td>
+    <td><%= list.property_type %></td>
+    <td><%= list.room_number %></td>
+    <td><%= list.bed_number %></td>
+    <td><%= list.country %></td>
+    <td><%= list.state %></td>
+    <td><%= list.city %></td>
+    <td><%= list.zipcode %></td>
+    <td><%= list.address %></td>
+    <td><%= list.price %></td>
+    <td><%= link_to 'More Deatils', listing_path(list) %></td>    
+    <td><%= link_to 'Make Reservation', new_listing_reservation_path(list) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @listings %>
+
+<%= link_to 'My Listing', my_listing_path %>
+
+<%= link_to 'Create new listing', new_listing_path %>

@@ -1,0 +1,24 @@
+Your original Listing:
+
+    <p>Listing ID: <%= @listing.id %></p>
+    <p>Owner: <%= @listing.name %></p>
+    <p>Premise type: <%= @listing.property_type %></p>
+    <P>Number of bed available: <%= @listing.bed_number %></p>
+
+    <h3>Address:</h3>
+
+    <p>State: <%= @listing.state %></p>
+    <p>City: <%= @listing.city %></p>
+    <p>Country: <%= @listing.country %></p>
+    <p>Zip Code: <%= @listing.zipcode %></p>
+    <p>Street: <%= @listing.address %></p>
+
+    <h3>Price</h3>
+
+    <p><%= @listing.price %></p>
+
+    <hr>
+
+<h1>Edit your listing:</h1>
+
+<%= render 'listings/form' %>

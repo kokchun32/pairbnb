@@ -1,0 +1,38 @@
+<h2>Your listing of available premises</h2>
+<table>
+  <tr>
+    <th>Host Name</th>
+    <th>Type</th>
+    <th>Available Room</th>
+    <th>Availabe Bed</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>Address</th>
+    <th>Price</th>
+  </tr>
+  <% @my_listings.each do |myl| %>
+  <tr>
+    <td><%= myl.name %></td>
+    <td><%= myl.property_type %></td>
+    <td><%= myl.room_number %></td>
+    <td><%= myl.bed_number %></td>
+    <td><%= myl.country %></td>
+    <td><%= myl.state %></td>
+    <td><%= myl.city %></td>
+    <td><%= myl.zipcode %></td>
+    <td><%= myl.address %></td>
+    <td><%= myl.price %></td>
+    <td><%= link_to 'More Deatils', listing_path(myl) %></td>
+    <td><%= link_to 'Edit', edit_listing_path(myl) %></td>
+    <td><%= link_to "Delete" , listing_path(myl), method: :delete, data: {confirm: 'Are your sure?'} %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'All Listing', listings_path %>
+
+<%= link_to 'Create new listing', new_listing_path %>
+
+<%= link_to 'My Profile', homepage_path %>

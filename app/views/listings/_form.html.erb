@@ -1,0 +1,79 @@
+<%= form_for(@listing) do |form| %>
+<h2>A. Fill in your premise details:</h2>
+<br>
+
+<div class="">
+  <%= form.hidden_field :user_id, value: current_user.id %>
+</div>
+
+<div class="">
+  <%= form.label "Host Name" %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="">
+  <%= form.label "Property Type" %>
+  <%= form.text_field :property_type %>
+</div>
+
+<div class="">
+  <%= form.label "Room Available" %>
+  <%= form.text_field :room_number %>
+</div>
+
+<div class="">
+  <%= form.label "Bed Available" %>
+  <%= form.text_field :bed_number %>
+</div>
+
+<div class="">
+  <%= form.label "Guest you can fit" %>
+  <%= form.text_field :guest_number %>
+</div>
+
+<h2>B. Fill in your premise's location:</h2>
+<br>
+
+<div class="">
+  <%= form.label "Country" %>
+  <%= form.text_field :country %>
+</div>
+
+<div class="">
+  <%= form.label "State" %>
+  <%= form.text_field :state %>
+</div>
+
+<div class="">
+  <%= form.label "City" %>
+  <%= form.text_field :city %>
+</div>
+
+<div class="">
+  <%= form.label "Zip Code" %>
+  <%= form.text_field :zipcode %>
+</div>
+
+<div class="">
+  <%= form.label "Address" %>
+  <%= form.text_field :address %>
+</div>
+
+<h2>C. Price</h2>
+<br>
+
+<div class="">
+  <%= form.label "Price" %>
+  <%= form.text_field :price %>
+</div>
+
+<div class="">
+  <%= form.label "Photos" %>
+  <%= form.file_field :image, :multiple => true %>
+</div>
+
+<div class="">
+  <%= form.submit "Create Listing" %>
+</div>
+
+<% end %>

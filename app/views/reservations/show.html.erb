@@ -1,0 +1,25 @@
+    <% @reservation.listing.image.each do |p| %>
+    <%= image_tag p unless @listing.image.blank? %>
+    <% end %>
+
+    <p>Owner: <%= @reservation.listing.name %></p>
+    <p>Premise type: <%= @reservation.listing.property_type %></p>
+    <P>Number of bed available: <%= @reservation.listing.bed_number %></p>
+
+    <h3>Address:</h3>
+
+    <p>State: <%= @reservation.listing.state %></p>
+    <p>City: <%= @reservation.listing.city %></p>
+    <p>Country: <%= @reservation.listing.country %></p>
+    <p>Zip Code: <%= @reservation.listing.zipcode %></p>
+    <p>Street: <%= @reservation.listing.address %></p>
+
+    <h3>Date reserved:</h3>
+
+    <p>From <%= @reservation.check_in %> to <%= @reservation.check_out %> </p>
+
+    <%= link_to 'Make Payment', payment_path %>
+
+    <%= link_to 'My Reservation', my_reservations_path %>
+
+    <%= link_to 'All Listing', listings_path %>

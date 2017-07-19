@@ -1,0 +1,40 @@
+<h1>Welcome to Pairbnb</h1>
+<h2>All Reservation Made</h2>
+
+<table>
+  <tr>
+    <th>Host Name</th>
+    <th>Type</th>
+    <th>Available Room</th>
+    <th>Availabe Bed</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>Address</th>
+    <th>Reserved by</th>
+    <th>Check in date</th>
+    <th>Check out date</th>
+  </tr>
+
+  <% @reservations.each do |list| %>
+  <tr>
+    <td><%= list.listing.name %></td>
+    <td><%= list.listing.property_type %></td>
+    <td><%= list.listing.room_number %></td>
+    <td><%= list.listing.bed_number %></td>
+    <td><%= list.listing.country %></td>
+    <td><%= list.listing.state %></td>
+    <td><%= list.listing.city %></td>
+    <td><%= list.listing.zipcode %></td>
+    <td><%= list.listing.address %></td>
+    <td><%= list.user.username %></td>
+    <td><%= list.check_in %></td>
+    <td><%= list.check_out %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'My Listing', my_listing_path %>
+
+<%= link_to 'Create new listing', new_listing_path %>

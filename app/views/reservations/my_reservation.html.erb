@@ -1,0 +1,25 @@
+<h1>My Reservation</h1>
+
+<table>
+  <tr>
+    <th>Host Name</th>
+    <th>Premises Type</th>
+    <th>Check in</th>
+    <th>Check out</th>
+    <th>Price</th>
+  </tr>
+  <% @my_reservations.each do |myr| %>
+  <tr>
+    <td><%= myr.listing.name %></td>
+    <td><%= myr.listing.property_type %></td>
+    <td><%= myr.check_in %></td>
+    <td><%= myr.check_out %></td>
+    <td><%= myr.listing.price %></td>
+    <td><%= link_to 'Checkout', payment_path(myr) %></td>
+    <td><%= link_to 'More Details', listing_reservation_path(myr.listing, myr) %></td>
+    <td><%= link_to 'Edit', edit_listing_reservation_path(myr.listing, myr) %></td>
+    <td><%= link_to 'Delete', listing_reservation_path(myr.listing, myr), method: :delete, data: {confirm: 'Are your sure?'} %></td>
+  </tr>
+  <% end %>
+</table>
+

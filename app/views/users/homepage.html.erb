@@ -1,0 +1,38 @@
+<h1>Welcome</h1>
+
+<p><%= image_tag current_user.image unless current_user.image.blank? %></p>
+
+<p>Welcome <%= current_user.username %></p>
+
+<% if current_user.role == "admin" %>
+<p>You are admin!</p>
+<% end %>
+
+<%= link_to 'Upload Photo', edit_user_path(current_user) %>
+
+<br>
+
+<%= link_to 'New Listing', "listings/new" %>
+
+<br>
+
+<%= link_to 'All Listing', listings_path %>
+
+<br>
+
+<%= link_to 'My Listing', my_listing_path %>
+
+<br>
+
+<%= link_to 'My Reservation', my_reservations_path %>
+
+<br>
+
+<% if current_user.role == "admin" %>
+<%= link_to 'Admin Listing', admin_listing_path %>
+<% end %>
+
+<div class="btn-group">
+  <button type="button" id="button">Click here for something fun</button>
+</div>
+<div id="joke_container"></div>
