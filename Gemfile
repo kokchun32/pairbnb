@@ -35,6 +35,26 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem "clearance"
+
+gem "figaro"
+
+gem 'omniauth-facebook'
+
+gem 'omniauth'
+
+gem 'faker'
+
+gem 'will_paginate'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'braintree'
+
+gem 'filterrific'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

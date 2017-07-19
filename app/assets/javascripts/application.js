@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('#button').on('click', function() {
+    $.ajax({
+        url: 'https://api.chucknorris.io/jokes/random',
+        method: 'get',
+        success: function(response) {
+            console.log(response),
+            $('#joke_container').html(response.value)
+            // var url = response.data.image_url
+            // $('#gif_container').html('<img src=" ' + url + '">')
+        },
+
+        beforeSend: function() {
+          $('#joke_container').html('Loading.....')
+        }
+
+      })
+    })
+})

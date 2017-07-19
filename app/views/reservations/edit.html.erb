@@ -1,0 +1,12 @@
+<h1>Change Reservation Date</h1>
+
+<h3>My Current Reservation</h3>
+
+<p>Check In Date: <%= @reservation.check_in %></p>
+<br>
+<p>Check Out Date: <%= @reservation.check_out %></p>
+<hr>
+
+<h3>Change Your Date Here</h3>
+
+<%= render 'reservations/form2' %>

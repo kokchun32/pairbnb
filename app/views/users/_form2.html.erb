@@ -1,0 +1,10 @@
+<%= form_for(@user) do |form| %>
+<div class="">
+  <%= form.label "Upload your Photo" %>
+  <%= form.file_field :image %>
+</div>
+
+<div class="">
+  <%= form.submit "Create Listing" %>
+</div>
+<% end %>

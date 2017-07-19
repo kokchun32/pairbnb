@@ -1,0 +1,30 @@
+<%= form_for [@listing, @reservation] do |form| %>
+
+<div class="">
+  <%= form.hidden_field :user_id, value: current_user.id %>
+</div>
+
+<div class="">
+  <%= form.hidden_field :listing_id, value: @listing.id %>
+</div>
+
+<div class="">
+  <%= form.label "Check in date:" %>
+  <%= form.date_field :check_in %>
+</div>
+
+<div class="">
+  <%= form.label "Check out date:" %>
+  <%= form.date_field :check_out %>
+</div>
+
+<div class="">
+  <%= form.submit "Reserve Now!!!!!" %>
+</div>
+<% end %>
+
+<%= link_to 'Back to all Listing', listings_path %>
+
+<!-- /reserviaton/:id
+
+/listing/:id/rservation/new -->
